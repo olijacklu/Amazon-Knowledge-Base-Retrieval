@@ -1,4 +1,4 @@
-# Amazon KB - Knowledge Base Retrieval Experiments
+# Agentic Retrieval for Knowledge Bases: From Chunking to Reranking
 
 Experimental framework for evaluating enterprise knowledge base retrieval methods with a focus on accuracy-latency-cost trade-offs for agentic systems.
 
@@ -13,13 +13,13 @@ This project addresses four critical implementation decisions for enterprise RAG
 1. **Document Segmentation** - How to chunk long, structured documents (fixed-window vs. semantic vs. hierarchical vs. agentic)
 2. **Graph Structure** - Whether knowledge graphs improve multi-hop reasoning over flat retrieval
 3. **Hybrid Retrieval** - How to balance sparse (BM25) and dense (vector) signals, with query-aware fusion
-4. **Conditional Reranking** - When to apply expensive LLM reranking vs. using fusion scores directly
+4. **Reranking** - When to apply expensive LLM reranking vs. using fusion scores directly
 
 ## Key Contributions
 
 - **Agentic Chunking**: LLM-guided segmentation with contextual summaries embedded for retrieval
-- **Fair Graph Evaluation**: Apples-to-apples comparison of graph methods v. best chunking baselines on multi-hop questions
-- **Query-Aware Fusion**: Learned per-query weights (Ridge Regression/XGBoost/MLP) for BM25+vector combination
+- **Fair Graph-Augmented Retrieval Evaluation**: Apples-to-apples comparison of graph methods vs. best chunking baselines on multi-hop questions
+- **Query-Aware Hybrid Fusion**: Learned per-query weights (Ridge Regression/XGBoost/MLP) for BM25+vector combination
 - **Conditional Reranking**: Calibrated threshold policy to trigger LLM reranking only when needed
 
 Unlike Wikipedia-based benchmarks, this evaluates on long-form, multimodal enterprise documents with complex structure.
